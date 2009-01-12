@@ -12,7 +12,7 @@
 (egg-meter-register-backend "Anthy" "egg/anthy" 'anthy-egg-conversion-backend)
 (egg-meter-register-backend "Canna" "egg/canna" 'canna-backend-Japanese)
 (egg-meter-register-backend "Sj3" "egg/sj3" 'sj3-conversion-backend)
-;(egg-meter-register-backend "FreeWnn" "egg/wnn" 'wnn-backend-Japanese)
+(egg-meter-register-backend "FreeWnn" "egg/wnn" 'wnn-backend-Japanese)
 
 (defun egg-meter-convert (backend hiragana)
   (let* ((blist (egg-start-conversion backend hiragana nil))
