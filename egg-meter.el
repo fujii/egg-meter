@@ -1,3 +1,10 @@
+;;; egg-meter.el --- Benchmark of Japanese kana-kanji conversion engine using Egg
+
+;; Copyright (C) 2009 Fujii Hironori
+
+;; Author: Fujii Hironori <fujii.hironori@gmail.com>
+;; Keywords: languages
+
 (require 'egg)
 
 (defvar egg-meter-backend-alist nil)
