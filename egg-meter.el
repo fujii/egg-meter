@@ -37,6 +37,6 @@
 
 (defun egg-meter-test-buffer ()
   (interactive)
-  (egg-meter-test (split-string (buffer-substring (point-min) (point-max)) "\n")))
+  (egg-meter-test (split-string (buffer-substring (point-min) (point-max)) "\n" t)))
 
 (provide 'egg-meter)
