@@ -30,11 +30,12 @@
 
 (defun egg-converter-convert-buffer (backend input output)
   (with-current-buffer input
-    (mapcar (lambda (sentence)
-	      (message "%s" sentence)
-	      (with-current-buffer output
-		(insert (egg-converter-convert-string backend sentence) "\n")))
-	    (split-string (buffer-substring (point-min) (point-max)) "\n" t))))
+    (goto-char (point-min))
+    (while (re-search-forward "^.+$" nil t)
+      (let ((sentence (match-string 0)))
+	(message "%s" sentence)
+	(with-current-buffer output
+	  (insert (egg-converter-convert-string backend sentence) "\n"))))))
 
 (defun egg-converter-convert-file (backend-name input-file output-file)
   (let ((backend (or (assoc backend-name egg-converter-backend-alist) (error "unknown backend: %s" backend-name)))
